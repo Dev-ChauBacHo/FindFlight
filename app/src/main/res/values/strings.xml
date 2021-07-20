@@ -1,8 +1,24 @@
 <resources>
     <string name="app_name">FindFlight</string>
     <string name="app_slogan">Save your time and money</string>
+    <string name="connection_timeout">Connection timeout</string>
     <string name="error_parse_json">Error parse json</string>
     <string name="title_discover">Discover</string>
-    <string name="title_search">Search</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search by name (airport, city)</string>
     <string name="title_favorite">Favorite</string>
+    <string name="text_set_time_reminder">Set time reminder</string>
+    <string name="text_choose_place">Choose places</string>
+    <string name="text_choose_departure_date">Choose departure date</string>
+    <string name="text_oneway">Oneway trip</string>
+    <string name="text_from">From</string>
+    <string name="text_to">To</string>
+    <string name="text_other_info">Other information</string>
+    <string name="text_return_date">Return date</string>
+    <string name="text_passengers">Passengers</string>
+    <string name="text_travel_class">Travel class</string>
+    <string name="text_currency">Currency</string>
+    <string name="text_leave_empty">(Leave empty if you want our suggestions)</string>
+    <string name="text_sort">Sort</string>
+    <string name="text_filter">Filter</string>
 </resources>

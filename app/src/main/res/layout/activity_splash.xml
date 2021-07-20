@@ -42,4 +42,13 @@
         app:layout_constraintRight_toRightOf="@id/textAppName"
         app:layout_constraintTop_toBottomOf="@id/textAppName" />
 
+    <ProgressBar
+        android:id="@+id/progressBarToken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/dp_10"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

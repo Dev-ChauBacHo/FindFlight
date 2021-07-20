@@ -2,7 +2,7 @@ package com.sun.findflight.data.source.remote.ultils
 
 import android.util.Base64
 import com.sun.findflight.BuildConfig
-import com.sun.findflight.utils.Network
+import com.sun.findflight.utils.NetworkConst
 import com.sun.findflight.utils.TimeUtils
 import com.sun.findflight.utils.TimeUtils.updateTokenTime
 import com.sun.findflight.utils.requestNewToken
@@ -26,14 +26,14 @@ fun getNetworkAuthority(urlLink: String) {
         val url = URL(urlLink)
         val urlOpenConnection = url.openConnection() as HttpURLConnection
         urlOpenConnection.apply {
-            requestMethod = Network.POST
+            requestMethod = NetworkConst.POST
             doOutput = true
-            setRequestProperty(Network.AUTHORIZATION, "${Network.BASIC} $authentication")
-            setRequestProperty(Network.CONTENT_TYPE, Network.DEFAULT_CONTENT_TYPE)
-            setRequestProperty(Network.ACCEPT, Network.RESPONSE_TYPE)
+            setRequestProperty(NetworkConst.AUTHORIZATION, "${NetworkConst.BASIC} $authentication")
+            setRequestProperty(NetworkConst.CONTENT_TYPE, NetworkConst.DEFAULT_CONTENT_TYPE)
+            setRequestProperty(NetworkConst.ACCEPT, NetworkConst.RESPONSE_TYPE)
         }
         val printStream = PrintStream(urlOpenConnection.outputStream)
-        printStream.print(Network.GRANT_TYPE)
+        printStream.print(NetworkConst.GRANT_TYPE)
         printStream.close()
         val inputStreamReader = InputStreamReader(urlOpenConnection.inputStream)
         val bufferedReader = BufferedReader(inputStreamReader)
@@ -45,7 +45,7 @@ fun getNetworkAuthority(urlLink: String) {
     }
     with(JSONObject(stringBuilder.toString())) {
         bearerToken =
-            getString(Network.ACCESS_TOKEN) to updateTokenTime(getLong(Network.EXPIRES_IN))
+            getString(NetworkConst.ACCESS_TOKEN) to updateTokenTime(getLong(NetworkConst.EXPIRES_IN))
     }
 }
 
@@ -56,8 +56,8 @@ fun getNetworkData(urlLink: String): String {
         val url = URL(urlLink)
         val urlOpenConnection = url.openConnection() as HttpURLConnection
         urlOpenConnection.apply {
-            setRequestProperty(Network.AUTHORIZATION, "${Network.BEARER} ${bearerToken.first}")
-            requestMethod = Network.GET
+            setRequestProperty(NetworkConst.AUTHORIZATION, "${NetworkConst.BEARER} ${bearerToken.first}")
+            requestMethod = NetworkConst.GET
         }
         val inputStreamReader = InputStreamReader(urlOpenConnection.inputStream)
         val bufferedReader = BufferedReader(inputStreamReader)

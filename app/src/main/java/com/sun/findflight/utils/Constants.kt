@@ -68,7 +68,7 @@ object TravelerModelConst {
     const val FARE_DETAILS = "fareDetailsBySegment"
 }
 
-object Network {
+object NetworkConst {
     const val GET = "GET"
     const val POST = "POST"
     const val GRANT_TYPE = "grant_type=client_credentials"

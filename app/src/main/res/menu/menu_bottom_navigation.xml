@@ -6,9 +6,9 @@
         android:icon="@drawable/ic_map_24"
         android:title="@string/title_discover"/>
     <item
-        android:id="@+id/menuSearch"
-        android:icon="@drawable/ic_search_24"
-        android:title="@string/title_search"/>
+        android:id="@+id/menuHome"
+        android:icon="@drawable/ic_home_24"
+        android:title="@string/title_home"/>
     <item
         android:id="@+id/menuFavorite"
         android:icon="@drawable/ic_favorite_24"
