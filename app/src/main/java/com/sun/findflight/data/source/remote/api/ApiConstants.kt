@@ -17,6 +17,7 @@ object ApiConstants {
 
     const val MAX_ITEM_PER_PAGE = "page[limit]"
     const val DEFAULT_MAX_ITEM_PER_PAGE = "50"
+    const val DEFAULT_MIN_ITEM_PER_PAGE = "3"
     const val MAX_ITEMS = "max"
     const val DEFAULT_MAX_ITEM = "50"
     const val PAGE_INDEX = "page[offset]"
@@ -25,7 +26,7 @@ object ApiConstants {
     const val DESTINATION = "destination"
     const val DEPARTURE_DATE = "departureDate"
     const val RETURN_DATE = "returnDate"
-    const val ONEWAY = "oneway"
+    const val ONEWAY = "oneWay"
     const val DURATION = "duration"
     const val NONSTOP = "nonStop"
     const val MAX_PRICE = "maxPrice"
@@ -34,7 +35,7 @@ object ApiConstants {
     const val LATITUDE = "latitude"
     const val LONGITUDE = "longitude"
     const val RADIUS = "radius"
-    const val DEFAULT_RADIUS = "200"
+    const val DEFAULT_RADIUS = "100"
 
     const val SUBTYPE = "subType"
     const val DEFAULT_SUB_TYPE = "AIRPORT,CITY"
@@ -56,6 +57,6 @@ object ApiConstants {
     const val SORT_BY_TRAVELERS_SCORE = "analytics.travelers.score"
 
     const val AUTHORITY_API_IMAGE = "flagcdn.com"
-    const val IMAGE_SIZE = "144x108"
+    const val IMAGE_SIZE = "112x84"
     const val FILE_EXTENSION = ".png"
 }

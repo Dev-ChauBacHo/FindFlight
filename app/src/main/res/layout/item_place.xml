@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <View
+        android:id="@+id/viewItemPlace"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_radius20_frangipani"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintDimensionRatio="2.3:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imagePlace"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_flag_holder"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@id/viewItemPlace"
+        app:layout_constraintTop_toTopOf="@id/viewItemPlace"
+        app:layout_constraintWidth_percent="0.13"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textPlaceType"
+        style="@style/PlaceSearchTextView"
+        android:layout_marginStart="@dimen/dp_6"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_marginEnd="@dimen/dp_2"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:text="@string/text_place_type"
+        app:layout_constraintBottom_toTopOf="@id/textPlaceName"
+        app:layout_constraintEnd_toEndOf="@id/guidelineSearchPlace"
+        app:layout_constraintStart_toEndOf="@id/imagePlace"
+        app:layout_constraintTop_toTopOf="@id/viewItemPlace" />
+
+    <TextView
+        android:id="@+id/textPlaceName"
+        style="@style/PlaceSearchTextView"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:text="@string/text_place_name"
+        app:layout_constraintBottom_toTopOf="@id/textPlaceCity"
+        app:layout_constraintEnd_toEndOf="@id/textPlaceType"
+        app:layout_constraintStart_toStartOf="@id/textPlaceType"
+        app:layout_constraintTop_toBottomOf="@id/textPlaceType" />
+
+    <TextView
+        android:id="@+id/textPlaceDetail"
+        style="@style/PlaceSearchTextView"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:text="@string/text_place_detailed_name"
+        app:layout_constraintBottom_toTopOf="@id/textPlaceCountry"
+        app:layout_constraintEnd_toEndOf="@id/textPlaceType"
+        app:layout_constraintStart_toStartOf="@id/textPlaceCity"
+        app:layout_constraintTop_toBottomOf="@id/textPlaceCity" />
+
+    <TextView
+        android:id="@+id/textPlaceCity"
+        style="@style/PlaceSearchTextView"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:text="@string/text_place_city_name"
+        app:layout_constraintBottom_toTopOf="@id/textPlaceDetail"
+        app:layout_constraintEnd_toEndOf="@id/textPlaceType"
+        app:layout_constraintStart_toStartOf="@id/imagePlace"
+        app:layout_constraintTop_toBottomOf="@id/imagePlace" />
+
+    <TextView
+        android:id="@+id/textPlaceCountry"
+        style="@style/PlaceSearchTextView"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:text="@string/text_place_country_name"
+        app:layout_constraintBottom_toTopOf="@id/textPlaceTimezone"
+        app:layout_constraintEnd_toEndOf="@id/textPlaceType"
+        app:layout_constraintStart_toStartOf="@id/textPlaceCity"
+        app:layout_constraintTop_toBottomOf="@id/textPlaceDetail" />
+
+    <TextView
+        android:id="@+id/textPlaceTimezone"
+        style="@style/PlaceSearchTextView"
+        android:layout_marginBottom="@dimen/dp_6"
+        android:text="@string/text_place_timezone"
+        app:layout_constraintBottom_toBottomOf="@id/viewItemPlace"
+        app:layout_constraintEnd_toEndOf="@id/textPlaceType"
+        app:layout_constraintStart_toStartOf="@id/textPlaceCity"
+        app:layout_constraintTop_toBottomOf="@id/textPlaceCountry" />
+
+    <TextView
+        android:id="@+id/textShowPlaceType"
+        style="@style/PlaceSearchTextView"
+        android:layout_marginEnd="@dimen/dp_6"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textPlaceType"
+        app:layout_constraintEnd_toEndOf="@id/viewItemPlace"
+        app:layout_constraintStart_toStartOf="@id/guidelineSearchPlace"
+        app:layout_constraintTop_toTopOf="@id/textPlaceType"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/textShowPlaceName"
+        style="@style/PlaceSearchTextView"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textPlaceName"
+        app:layout_constraintEnd_toEndOf="@id/textShowPlaceType"
+        app:layout_constraintStart_toStartOf="@id/textShowPlaceType"
+        app:layout_constraintTop_toTopOf="@id/textPlaceName"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/textShowPlaceDetail"
+        style="@style/PlaceSearchTextView"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textPlaceDetail"
+        app:layout_constraintEnd_toEndOf="@id/textShowPlaceType"
+        app:layout_constraintStart_toStartOf="@id/textShowPlaceType"
+        app:layout_constraintTop_toTopOf="@id/textPlaceDetail"
+        tools:text="@tools:sample/cities" />
+
+    <TextView
+        android:id="@+id/textShowPlaceCity"
+        style="@style/PlaceSearchTextView"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textPlaceCity"
+        app:layout_constraintEnd_toEndOf="@id/textShowPlaceType"
+        app:layout_constraintStart_toStartOf="@id/textShowPlaceType"
+        app:layout_constraintTop_toTopOf="@id/textPlaceCity"
+        tools:text="@tools:sample/cities" />
+
+    <TextView
+        android:id="@+id/textShowPlaceCountry"
+        style="@style/PlaceSearchTextView"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textPlaceCountry"
+        app:layout_constraintEnd_toEndOf="@id/textShowPlaceType"
+        app:layout_constraintStart_toStartOf="@id/textShowPlaceType"
+        app:layout_constraintTop_toTopOf="@id/textPlaceCountry"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/textShowPlaceTimezone"
+        style="@style/PlaceSearchTextView"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textPlaceTimezone"
+        app:layout_constraintEnd_toEndOf="@id/textShowPlaceType"
+        app:layout_constraintStart_toStartOf="@id/textShowPlaceType"
+        app:layout_constraintTop_toTopOf="@id/textPlaceTimezone"
+        tools:text="@tools:sample/lorem" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineSearchPlace"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

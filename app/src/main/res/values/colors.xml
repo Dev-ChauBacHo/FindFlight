@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_orange_peel">#FF9800</color>
-    <color name="color_gold_drop">#F57C00</color>
-    <color name="color_frangipani">#FFE0B2</color>
-    <color name="color_sunset_orange">#FF5252</color>
     <color name="color_boulder">#757575</color>
+    <color name="color_frangipani">#FFE0B2</color>
+    <color name="color_gold_drop">#F57C00</color>
+    <color name="color_orange_peel">#FF9800</color>
+    <color name="color_pickled_bluewood">#2F4858</color>
+    <color name="color_sunset_orange">#FF5252</color>
+    <color name="color_vivid_tangerine">#FE8A7F</color>
 </resources>

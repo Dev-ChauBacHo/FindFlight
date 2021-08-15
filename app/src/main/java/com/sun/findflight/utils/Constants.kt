@@ -3,6 +3,11 @@ package com.sun.findflight.utils
 object BaseConst {
     const val DATA = "data"
     const val DICTIONARY = "dictionaries"
+    const val LOCATION = "locations"
+    const val CARRIERS = "carriers"
+    const val DETAILED_NAME = "detailedName"
+    const val COUNTRY_CODE = "countryCode"
+    const val AIRCRAFT = "aircraft"
     const val ANALYTICS = "analytics"
     const val FLIGHTS = "flights"
     const val TRAVELERS = "travelers"
@@ -10,11 +15,11 @@ object BaseConst {
     const val ORIGIN = "origin"
     const val DESTINATION = "destination"
     const val DEPARTURE_DATE = "departureDate"
+    const val RETURN_DATE = "returnDate"
     const val PRICE = "price"
     const val TOTAL = "total"
     const val LINK = "links"
     const val FLIGHT_OFFERS = "flightOffers"
-    const val DURATION = "duration"
     const val IATA_CODE = "iataCode"
     const val CARRIER_CODE = "carrierCode"
     const val SECONDS_VALUE = 1000
@@ -29,6 +34,7 @@ object FlightModelConst {
     const val VALIDATE_AIRLINE = "validatingAirlineCodes"
     const val ITINERARIES = "itineraries"
     const val SEGMENTS = "segments"
+    const val DURATION = "duration"
     const val INDEX_ZERO = 0
 }
 

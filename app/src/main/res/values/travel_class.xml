@@ -1,0 +1,8 @@
+<resources>
+    <string-array name="travel_class">
+        <item>ECONOMY</item>
+        <item>PREMIUM ECONOMY</item>
+        <item>BUSINESS</item>
+        <item>FIRST</item>
+    </string-array>
+</resources>

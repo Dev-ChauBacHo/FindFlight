@@ -1,6 +1,7 @@
 package com.sun.findflight.base
 
 import androidx.recyclerview.widget.RecyclerView
+import com.sun.findflight.utils.setFadeAnimation
 
 abstract class BaseAdapter<T, V : BaseViewHolder<T>>(
     private val items: MutableList<T>
@@ -8,6 +9,7 @@ abstract class BaseAdapter<T, V : BaseViewHolder<T>>(
 
     override fun onBindViewHolder(holder: V, position: Int) {
         getItem(position)?.let { holder.bindData(it) }
+        holder.itemView.setFadeAnimation()
     }
 
     override fun getItemCount() = items.size
@@ -22,4 +24,7 @@ abstract class BaseAdapter<T, V : BaseViewHolder<T>>(
         }
         notifyDataSetChanged()
     }
+    /*
+        TODO add a method to update only image (origin, des) of each item flight
+     */
 }

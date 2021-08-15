@@ -1,6 +1,5 @@
 package com.sun.findflight.ui.splash
 
-import android.content.res.Resources
 import com.sun.findflight.R
 import com.sun.findflight.data.repository.TokenRepository
 import com.sun.findflight.data.source.ultils.OnDataCallBack
@@ -11,16 +10,20 @@ class SplashPresenter(
 ) : SplashContract.Presenter {
 
     override fun updateToken() {
-        repository.updateToken(object : OnDataCallBack<Unit> {
-            override fun onSuccess(data: Unit) {
-                view.notifyTokenUpdated()
-            }
+        try {
+            repository.updateToken(object : OnDataCallBack<Unit> {
+                override fun onSuccess(data: Unit) {
+                    view.notifyTokenUpdated()
+                }
 
-            override fun onFailure(e: Exception?) {
-                view.showMessage(ERROR_GET_TOKEN)
-            }
+                override fun onFailure(e: Exception?) {
+                    view.showMessage(R.string.error_no_internet)
+                }
 
-        })
+            })
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     override fun getData() {

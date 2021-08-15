@@ -1,8 +1,7 @@
 package com.sun.findflight.data.source.ultils
 
 import android.os.AsyncTask
-import com.sun.findflight.R
-import java.util.concurrent.TimeoutException
+import java.util.concurrent.CancellationException
 
 class DownloaderTask<I, O>(
     private val callback: OnDataCallBack<O>,
@@ -28,10 +27,11 @@ class DownloaderTask<I, O>(
 
     override fun onCancelled() {
         super.onCancelled()
-        callback.onFailure(TimeoutException(R.string.connection_timeout.toString()))
+        callback.onFailure(CancellationException(ERROR_TIME_OUT))
     }
 
     companion object {
         const val WAIT_TIMEOUT = 5000L
+        const val ERROR_TIME_OUT= "Connection error or timeout"
     }
 }

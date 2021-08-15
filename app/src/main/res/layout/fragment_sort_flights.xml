@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10">
+
+        <RadioButton
+            android:id="@+id/radioNoSort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_gold_drop"
+            android:text="@string/text_no_sorting"
+            android:textSize="@dimen/sp_20" />
+
+        <RadioButton
+            android:id="@+id/radioLowestPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_gold_drop"
+            android:text="@string/text_lowest_price"
+            android:textSize="@dimen/sp_20" />
+
+        <RadioButton
+            android:id="@+id/radioHighestPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_gold_drop"
+            android:text="@string/text_highest_price"
+            android:textSize="@dimen/sp_20" />
+
+        <RadioButton
+            android:id="@+id/radioShortestDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_gold_drop"
+            android:text="@string/text_shortest_duration"
+            android:textSize="@dimen/sp_20" />
+
+        <RadioButton
+            android:id="@+id/radioLongestDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_gold_drop"
+            android:text="@string/text_longest_duration"
+            android:textSize="@dimen/sp_20" />
+
+        <RadioButton
+            android:id="@+id/radioSmallestAvailableSeats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_gold_drop"
+            android:text="@string/text_smallest_available_seats"
+            android:textSize="@dimen/sp_20" />
+
+        <RadioButton
+            android:id="@+id/radioLargestAvailableSeats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_gold_drop"
+            android:text="@string/text_largest_available_seats"
+            android:textSize="@dimen/sp_20" />
+    </RadioGroup>
+
+</LinearLayout>

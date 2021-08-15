@@ -16,7 +16,7 @@ abstract class BaseActivity<V : ViewBinding> : AppCompatActivity() {
         initComponents()
     }
 
-    protected fun openFragment(fragment: Fragment) =
+    protected fun openFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
             .setCustomAnimations(
@@ -27,7 +27,12 @@ abstract class BaseActivity<V : ViewBinding> : AppCompatActivity() {
             )
             .replace(R.id.frameMain, fragment)
             .commit()
+    }
 
     protected abstract fun initComponents()
 
+    private fun fragmentIsVisible(tag: String): Boolean {
+        val fragment = supportFragmentManager.findFragmentByTag(tag)
+        return fragment != null && fragment.isVisible
+    }
 }

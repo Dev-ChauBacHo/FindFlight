@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <View
+        android:id="@+id/viewItemFare"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_10"
+
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_radius5_shadow_white"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintDimensionRatio="3.5:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.95" />
+
+    <TextView
+        android:id="@+id/textOriginPlaceCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_6"
+        android:layout_marginTop="@dimen/dp_2"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:ellipsize="end"
+        android:gravity="end"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textOriginPlaceName"
+        app:layout_constraintStart_toStartOf="@id/viewItemFare"
+        app:layout_constraintTop_toTopOf="@id/viewItemFare"
+        app:layout_constraintWidth_percent="0.3"
+        tools:text="@tools:sample/lorem" />
+
+    <ImageView
+        android:id="@+id/imagePlane1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:rotation="60"
+        android:src="@drawable/ic_flight"
+        app:layout_constraintBottom_toBottomOf="@id/textOriginPlaceCode"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineSearchFlight"
+        app:layout_constraintStart_toEndOf="@id/textOriginPlaceCode"
+        app:layout_constraintTop_toTopOf="@id/textOriginPlaceCode"
+        app:layout_constraintWidth_percent="0.06" />
+
+    <TextView
+        android:id="@+id/textOriginPlaceName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_6"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toTopOf="@id/textStart"
+        app:layout_constraintEnd_toStartOf="@id/guidelineSearchFlight"
+        app:layout_constraintStart_toStartOf="@id/viewItemFare"
+        app:layout_constraintTop_toBottomOf="@id/textOriginPlaceCode"
+        tools:text="@tools:sample/cities" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_marginBottom="@dimen/dp_6"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_divider"
+        app:layout_constraintBottom_toBottomOf="@id/viewItemFare"
+        app:layout_constraintEnd_toEndOf="@id/guidelineSearchFlight"
+        app:layout_constraintStart_toStartOf="@id/guidelineSearchFlight"
+        app:layout_constraintTop_toBottomOf="@id/textDestinationPlaceCode" />
+
+    <TextView
+        android:id="@+id/textStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/text_start_date"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@id/viewItemFare"
+        app:layout_constraintEnd_toStartOf="@id/textBasicDepartureDate"
+        app:layout_constraintStart_toStartOf="@id/viewItemFare"
+        app:layout_constraintTop_toBottomOf="@id/textOriginPlaceName"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/textBasicDepartureDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textStart"
+        app:layout_constraintEnd_toEndOf="@id/textOriginPlaceName"
+        app:layout_constraintStart_toEndOf="@id/textStart"
+        app:layout_constraintTop_toTopOf="@id/textStart"
+        tools:text="@tools:sample/date/ddmmyy" />
+
+    <ImageView
+        android:id="@+id/imagePlane3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:rotation="120"
+        android:src="@drawable/ic_flight"
+        app:layout_constraintBottom_toBottomOf="@id/textDestinationPlaceCode"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/textDestinationPlaceCode"
+        app:layout_constraintStart_toStartOf="@id/guidelineSearchFlight"
+        app:layout_constraintTop_toTopOf="@id/textDestinationPlaceCode"
+        app:layout_constraintWidth_percent="0.06" />
+
+    <TextView
+        android:id="@+id/textDestinationPlaceCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_6"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textOriginPlaceCode"
+        app:layout_constraintEnd_toEndOf="@id/viewItemFare"
+        app:layout_constraintTop_toTopOf="@id/textOriginPlaceCode"
+        app:layout_constraintWidth_percent="0.3"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/textDestinationPlaceName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_6"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@id/textOriginPlaceName"
+        app:layout_constraintEnd_toEndOf="@id/viewItemFare"
+        app:layout_constraintStart_toEndOf="@id/guidelineSearchFlight"
+        app:layout_constraintTop_toTopOf="@id/textOriginPlaceName"
+        tools:text="@tools:sample/cities" />
+
+    <TextView
+        android:id="@+id/textReturn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/text_return"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@id/textStart"
+        app:layout_constraintEnd_toEndOf="@id/viewItemFare"
+        app:layout_constraintStart_toEndOf="@id/textBasicReturnDate"
+        app:layout_constraintTop_toTopOf="@id/textStart"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/textBasicReturnDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textReturn"
+        app:layout_constraintEnd_toStartOf="@id/textReturn"
+        app:layout_constraintStart_toStartOf="@id/textDestinationPlaceName"
+        app:layout_constraintTop_toTopOf="@id/textReturn"
+        tools:text="@tools:sample/date/ddmmyy" />
+
+    <ImageView
+        android:id="@+id/imageFavourite"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_favorite_24"
+        android:stateListAnimator="@animator/favourite_clicked"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/viewItemFare"
+        app:layout_constraintTop_toTopOf="@id/viewItemFare"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <ImageView
+        android:id="@+id/imageUnFavourite"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_unfavourite"
+        android:stateListAnimator="@animator/favourite_clicked"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/viewItemFare"
+        app:layout_constraintTop_toTopOf="@id/viewItemFare"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineSearchFlight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

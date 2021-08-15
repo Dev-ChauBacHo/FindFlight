@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.discover.DiscoverFragment">
+
+    <TextView
+        android:id="@+id/textIntroduce1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_30"
+        android:gravity="center"
+        android:text="@string/text_discover_introduce1"
+        android:textColor="@color/color_pickled_bluewood"
+        android:textSize="@dimen/sp_28"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textIntroduce2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/text_discover_introduce2"
+        android:textColor="@color/color_pickled_bluewood"
+        android:textSize="@dimen/sp_28"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/textIntroduceColor"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textIntroduce1" />
+
+    <TextView
+        android:id="@+id/textIntroduceColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_4"
+        android:text="@string/text_discover_introduce_color"
+        android:textColor="@color/color_sunset_orange"
+        android:textSize="@dimen/sp_28"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textIntroduce2"
+        app:layout_constraintEnd_toStartOf="@id/textIntroduce3"
+        app:layout_constraintStart_toEndOf="@id/textIntroduce2"
+        app:layout_constraintTop_toTopOf="@id/textIntroduce2" />
+
+    <TextView
+        android:id="@+id/textIntroduce3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_discover_introduce3"
+        android:textColor="@color/color_pickled_bluewood"
+        android:textSize="@dimen/sp_28"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textIntroduce2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textIntroduceColor"
+        app:layout_constraintTop_toTopOf="@id/textIntroduce2" />
+
+    <View
+        android:id="@+id/viewDiscover"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:background="@drawable/bg_radius20_frangipani"
+        app:layout_constraintBottom_toTopOf="@id/guidelineDiscover"
+        app:layout_constraintDimensionRatio="2.5:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.95" />
+
+    <TextView
+        android:id="@+id/textYourCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_16"
+        android:text="@string/text_your_city"
+        android:textColor="@color/color_pickled_bluewood"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/imagePlaneTakeoff"
+        app:layout_constraintStart_toStartOf="@id/viewDiscover"
+        app:layout_constraintTop_toTopOf="@id/viewDiscover" />
+
+    <ImageView
+        android:id="@+id/imagePlaneTakeoff"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_6"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_plane_takeoff"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@id/textYourCity"
+        app:layout_constraintTop_toBottomOf="@id/textYourCity"
+        app:layout_constraintWidth_percent="0.08" />
+
+    <TextView
+        android:id="@+id/textYourOrigin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:hint="@string/title_search"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintBottom_toBottomOf="@id/imagePlaneTakeoff"
+        app:layout_constraintEnd_toEndOf="@id/viewDiscover"
+        app:layout_constraintStart_toEndOf="@id/imagePlaneTakeoff"
+        app:layout_constraintTop_toTopOf="@id/imagePlaneTakeoff"
+        tools:text="@tools:sample/cities" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_divider"
+        app:layout_constraintEnd_toEndOf="@id/viewDiscover"
+        app:layout_constraintStart_toStartOf="@id/imagePlaneTakeoff"
+        app:layout_constraintTop_toBottomOf="@id/imagePlaneTakeoff" />
+
+    <TextView
+        android:id="@+id/textChooseMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/text_choose_month"
+        android:textColor="@color/color_pickled_bluewood"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/viewDiscover"
+        app:layout_constraintStart_toStartOf="@id/viewDiscover"
+        app:layout_constraintTop_toBottomOf="@id/textYourOrigin" />
+
+    <Spinner
+        android:id="@+id/spinnerMonth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/months"
+        app:layout_constraintBottom_toBottomOf="@id/textChooseMonth"
+        app:layout_constraintStart_toEndOf="@id/textChooseMonth"
+        app:layout_constraintTop_toTopOf="@id/textChooseMonth" />
+
+    <ImageView
+        android:id="@+id/imageDropdownMonth"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_arrow_drop_down"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerMonth"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/spinnerMonth"
+        app:layout_constraintTop_toTopOf="@id/spinnerMonth"
+        app:layout_constraintWidth_percent="0.07" />
+
+    <Spinner
+        android:id="@+id/spinnerYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/years"
+        app:layout_constraintBottom_toBottomOf="@id/textChooseMonth"
+        app:layout_constraintStart_toEndOf="@id/imageDropdownMonth"
+        app:layout_constraintTop_toTopOf="@id/textChooseMonth" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_arrow_drop_down"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerYear"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/viewDiscover"
+        app:layout_constraintStart_toEndOf="@id/spinnerYear"
+        app:layout_constraintTop_toTopOf="@id/spinnerYear"
+        app:layout_constraintWidth_percent="0.07" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonDiscover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_100"
+        android:backgroundTint="@color/color_sunset_orange"
+        android:padding="@dimen/dp_10"
+        android:text="@string/title_discover"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineDiscover" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_100"
+        android:gravity="center"
+        android:text="@string/text_discover_explain_feature"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonDiscover" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDiscover"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

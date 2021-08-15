@@ -26,7 +26,7 @@ object ApiQuery {
         )
         .toString()
 
-    fun querySearchPlaces(keyword: String, countryCode: String?): String {
+    fun querySearchPlaces(keyword: String, countryCode: String? = null): String {
         val uri = createBaseUri()
             .appendPath(ApiConstants.CONTENT_VER1)
             .appendEncodedPath(ApiConstants.SEARCH_PLACE)
@@ -45,12 +45,11 @@ object ApiQuery {
         destination: String?,
         departureDate: String?,
         oneWay: Boolean?,
-        duration: String?,
-        nonStop: Boolean?,
     ): String {
         val uri = createBaseUri()
-            .appendPath(ApiConstants.SEARCH_FLIGHT)
             .appendPath(ApiConstants.CONTENT_VER1)
+            .appendPath(ApiConstants.SEARCH_FLIGHT)
+
         destination?.let {
             uri.appendPath(ApiConstants.FLIGHT_CHEAPEST_DATE)
         } ?: uri.appendPath(ApiConstants.FLIGHT_INSPIRATION)
@@ -59,8 +58,7 @@ object ApiQuery {
         destination?.let { uri.appendQueryParameter(ApiConstants.DESTINATION, it) }
         departureDate?.let { uri.appendQueryParameter(ApiConstants.DEPARTURE_DATE, it) }
         oneWay?.let { uri.appendQueryParameter(ApiConstants.ONEWAY, it.toString()) }
-        duration?.let { uri.appendQueryParameter(ApiConstants.DURATION, it) }
-        nonStop?.let { uri.appendQueryParameter(ApiConstants.NONSTOP, it.toString()) }
+        uri.appendQueryParameter(ApiConstants.NONSTOP, false.toString())
 
         return uri.toString()
     }
@@ -70,13 +68,13 @@ object ApiQuery {
         destinationLocationCode: String,
         departureDate: String,
         returnDate: String?,
-        adults: Int,
-        children: Int?,
-        infants: Int?,
+        adults: String,
+        children: String?,
+        infants: String?,
         travelClass: String?,
         nonStop: Boolean?,
         currencyCode: String?,
-        maxPrice: Int?
+        maxPrice: String?
     ): String {
         val uri = createBaseUri()
             .appendPath(ApiConstants.CONTENT_VER2)
@@ -86,15 +84,15 @@ object ApiQuery {
             .appendQueryParameter(ApiConstants.DESTINATION_LOCATION_CODE, destinationLocationCode)
             .appendQueryParameter(ApiConstants.DEPARTURE_DATE, departureDate)
         returnDate?.let { uri.appendQueryParameter(ApiConstants.RETURN_DATE, it) }
-        uri.appendQueryParameter(ApiConstants.ADULTS, adults.toString())
+        uri.appendQueryParameter(ApiConstants.ADULTS, adults)
             .appendQueryParameter(ApiConstants.MAX_ITEMS, ApiConstants.DEFAULT_MAX_ITEM)
 
-        children?.let { uri.appendQueryParameter(ApiConstants.CHILDREN, it.toString()) }
-        infants?.let { uri.appendQueryParameter(ApiConstants.INFANTS, it.toString()) }
+        children?.let { uri.appendQueryParameter(ApiConstants.CHILDREN, it) }
+        infants?.let { uri.appendQueryParameter(ApiConstants.INFANTS, it) }
         travelClass?.let { uri.appendQueryParameter(ApiConstants.TRAVEL_CLASS, it) }
         nonStop?.let { uri.appendQueryParameter(ApiConstants.NONSTOP, it.toString()) }
         currencyCode?.let { uri.appendQueryParameter(ApiConstants.CURRENCY_CODE, it) }
-        maxPrice?.let { uri.appendQueryParameter(ApiConstants.MAX_PRICE, it.toString()) }
+        maxPrice?.let { uri.appendQueryParameter(ApiConstants.MAX_PRICE, it) }
 
         return uri.toString()
     }
@@ -107,14 +105,14 @@ object ApiQuery {
         .appendQueryParameter(ApiConstants.MAX_ITEMS, ApiConstants.DEFAULT_MAX_ITEM)
         .appendQueryParameter(
             ApiConstants.MAX_ITEM_PER_PAGE,
-            ApiConstants.DEFAULT_MAX_ITEM_PER_PAGE
+            ApiConstants.DEFAULT_MIN_ITEM_PER_PAGE
         )
         .toString()
 
-    fun queryImage(countryCode: String) = Uri.Builder()
+    fun queryImage(countryCode: String, imageSize: String = ApiConstants.IMAGE_SIZE) = Uri.Builder()
         .scheme(ApiConstants.SCHEME_HTTPS)
         .authority(ApiConstants.AUTHORITY_API_IMAGE)
-        .appendPath(ApiConstants.IMAGE_SIZE)
+        .appendPath(imageSize)
         .appendPath("${countryCode}${ApiConstants.FILE_EXTENSION}")
         .toString()
 }

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewFare"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.flightfaredetail.FlightFareDetailFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFare"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_6"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_flight_fare" />
+
+        <TextView
+            android:id="@+id/textPriceDetail"
+            style="@style/FlightDetailTextView"
+            android:layout_margin="@dimen/dp_10"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_28"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerFare"
+            tools:text="Price details" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintEnd_toEndOf="@id/textPriceDetail"
+            app:layout_constraintStart_toStartOf="@id/textPriceDetail"
+            app:layout_constraintTop_toBottomOf="@id/textPriceDetail" />
+
+        <TextView
+            android:id="@+id/textFlightAdult"
+            style="@style/FlightDetailTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/textAdultOption"
+            android:layout_marginTop="@dimen/sp_10"
+            android:text="@string/text_adult"
+            android:textAllCaps="true"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/textAdultQuantity"
+            app:layout_constraintStart_toStartOf="@id/textPriceDetail"
+            app:layout_constraintTop_toBottomOf="@id/textPriceDetail"
+            app:layout_constraintWidth_percent="0.25" />
+
+        <TextView
+            android:id="@+id/textAdultOption"
+            style="@style/FlightDetailTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/textFlightAdult"
+            app:layout_constraintStart_toStartOf="@id/textFlightAdult"
+            app:layout_constraintTop_toBottomOf="@id/textFlightAdult"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/textAdultQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_2"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/textAdultOption"
+            app:layout_constraintEnd_toStartOf="@id/imageAdult"
+            app:layout_constraintStart_toEndOf="@id/textFlightAdult"
+            app:layout_constraintTop_toTopOf="@id/textFlightAdult"
+            tools:text="x1" />
+
+        <ImageView
+            android:id="@+id/imageAdult"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_2"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_adult"
+            app:layout_constraintBottom_toBottomOf="@id/textAdultOption"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/textAdultOption"
+            app:layout_constraintStart_toEndOf="@id/textAdultQuantity"
+            app:layout_constraintTop_toTopOf="@id/textFlightAdult"
+            app:layout_constraintWidth_percent="0.06" />
+
+        <TextView
+            android:id="@+id/textAdultPrice"
+            style="@style/FlightDetailTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_passenger_default"
+            android:textAllCaps="true"
+            android:textColor="@color/color_sunset_orange"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/textAdultOption"
+            app:layout_constraintEnd_toEndOf="@id/textPriceDetail"
+            app:layout_constraintStart_toEndOf="@id/imageAdult"
+            app:layout_constraintTop_toTopOf="@id/textFlightAdult" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintEnd_toEndOf="@id/textPriceDetail"
+            app:layout_constraintStart_toStartOf="@id/textPriceDetail"
+            app:layout_constraintTop_toBottomOf="@id/textAdultOption" />
+
+        <TextView
+            android:id="@+id/textFlightChild"
+            style="@style/FlightDetailTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sp_16"
+            android:text="@string/text_child"
+            app:layout_constraintBottom_toTopOf="@id/textChildOption"
+            android:textAllCaps="true"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/textFlightAdult"
+            app:layout_constraintStart_toStartOf="@id/textFlightAdult"
+            app:layout_constraintTop_toBottomOf="@id/textAdultOption"
+            app:layout_constraintWidth_percent="0.25" />
+
+        <TextView
+            android:id="@+id/textChildOption"
+            style="@style/FlightDetailTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/textFlightChild"
+            app:layout_constraintStart_toStartOf="@id/textFlightChild"
+            app:layout_constraintTop_toBottomOf="@id/textFlightChild"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/textChildQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_2"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/textChildOption"
+            app:layout_constraintEnd_toEndOf="@id/textAdultQuantity"
+            app:layout_constraintStart_toStartOf="@id/textAdultQuantity"
+            app:layout_constraintTop_toTopOf="@id/textFlightChild"
+            tools:text="x1" />
+
+        <ImageView
+            android:id="@+id/imageChild"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_child"
+            app:layout_constraintBottom_toBottomOf="@id/textChildOption"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/imageAdult"
+            app:layout_constraintStart_toStartOf="@id/imageAdult"
+            app:layout_constraintTop_toTopOf="@id/textFlightChild"
+            app:layout_constraintWidth_percent="0.04" />
+
+        <TextView
+            android:id="@+id/textChildPrice"
+            style="@style/FlightDetailTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_passenger_default"
+            android:textAllCaps="true"
+            android:textColor="@color/color_sunset_orange"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/textChildOption"
+            app:layout_constraintEnd_toEndOf="@id/textAdultPrice"
+            app:layout_constraintStart_toStartOf="@id/textAdultPrice"
+            app:layout_constraintTop_toTopOf="@id/textFlightChild" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintEnd_toEndOf="@id/textPriceDetail"
+            app:layout_constraintStart_toStartOf="@id/textPriceDetail"
+            app:layout_constraintTop_toBottomOf="@id/textChildOption" />
+
+        <TextView
+            android:id="@+id/textFlightInfant"
+            style="@style/FlightDetailTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sp_30"
+            android:text="@string/text_infant"
+            android:textAllCaps="true"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/textFlightAdult"
+            app:layout_constraintStart_toStartOf="@id/textFlightAdult"
+            app:layout_constraintTop_toBottomOf="@id/textChildOption"
+            app:layout_constraintWidth_percent="0.25" />
+
+        <TextView
+            android:id="@+id/textInfantQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_2"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/textFlightInfant"
+            app:layout_constraintEnd_toEndOf="@id/textAdultQuantity"
+            app:layout_constraintStart_toStartOf="@id/textAdultQuantity"
+            app:layout_constraintTop_toTopOf="@id/textFlightInfant"
+            tools:text="x1" />
+
+        <ImageView
+            android:id="@+id/imageInfant"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_infant"
+            app:layout_constraintBottom_toBottomOf="@id/textFlightInfant"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/imageAdult"
+            app:layout_constraintStart_toStartOf="@id/imageAdult"
+            app:layout_constraintTop_toTopOf="@id/textFlightInfant"
+            app:layout_constraintWidth_percent="0.05" />
+
+        <TextView
+            android:id="@+id/textInfantPrice"
+            style="@style/FlightDetailTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_passenger_default"
+            android:textAllCaps="true"
+            android:textColor="@color/color_sunset_orange"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/textFlightInfant"
+            app:layout_constraintEnd_toEndOf="@id/textAdultPrice"
+            app:layout_constraintStart_toStartOf="@id/textAdultPrice"
+            app:layout_constraintTop_toTopOf="@id/textFlightInfant" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintEnd_toEndOf="@id/textPriceDetail"
+            app:layout_constraintStart_toStartOf="@id/textPriceDetail"
+            app:layout_constraintTop_toBottomOf="@id/textFlightInfant" />
+
+        <TextView
+            android:id="@+id/textTaxIncluded"
+            style="@style/FlightDetailTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:text="@string/text_tax_included"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_12"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@id/textAdultPrice"
+            app:layout_constraintStart_toStartOf="@id/textAdultPrice"
+            app:layout_constraintTop_toBottomOf="@id/textFlightInfant" />
+
+        <ImageView
+            android:id="@+id/imageMoney"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_money"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/textTotal"
+            app:layout_constraintTop_toBottomOf="@id/textTaxIncluded"
+            app:layout_constraintWidth_percent="0.05"
+            app:tint="@android:color/black" />
+
+        <TextView
+            android:id="@+id/textTotal"
+            style="@style/FlightDetailTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_total"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/imageMoney"
+            app:layout_constraintEnd_toStartOf="@id/textTotalPrice"
+            app:layout_constraintTop_toTopOf="@id/imageMoney" />
+
+        <TextView
+            android:id="@+id/textTotalPrice"
+            style="@style/FlightDetailTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_passenger_default"
+            android:textAllCaps="true"
+            android:textColor="@color/color_sunset_orange"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/textTotal"
+            app:layout_constraintEnd_toEndOf="@id/textAdultPrice"
+            app:layout_constraintStart_toStartOf="@id/textAdultPrice"
+            app:layout_constraintTop_toTopOf="@id/textTotal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

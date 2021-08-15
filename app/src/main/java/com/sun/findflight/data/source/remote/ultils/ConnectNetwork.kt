@@ -1,6 +1,7 @@
 package com.sun.findflight.data.source.remote.ultils
 
 import android.util.Base64
+import android.util.Log
 import com.sun.findflight.BuildConfig
 import com.sun.findflight.utils.NetworkConst
 import com.sun.findflight.utils.TimeUtils
@@ -50,6 +51,7 @@ fun getNetworkAuthority(urlLink: String) {
 }
 
 fun getNetworkData(urlLink: String): String {
+    Log.d("FindFlight", "getNetworkData: $urlLink")
     val stringBuilder = StringBuilder()
     if (bearerToken.first == null || TimeUtils.tokenExpired(bearerToken.second)) requestNewToken()
     try {
@@ -59,11 +61,14 @@ fun getNetworkData(urlLink: String): String {
             setRequestProperty(NetworkConst.AUTHORIZATION, "${NetworkConst.BEARER} ${bearerToken.first}")
             requestMethod = NetworkConst.GET
         }
-        val inputStreamReader = InputStreamReader(urlOpenConnection.inputStream)
-        val bufferedReader = BufferedReader(inputStreamReader)
-        bufferedReader.forEachLine {
-            stringBuilder.append(it)
-        }
+//        if (urlOpenConnection.responseCode == 200) {
+            //TODO change
+            val inputStreamReader = InputStreamReader(urlOpenConnection.inputStream)
+            val bufferedReader = BufferedReader(inputStreamReader)
+            bufferedReader.forEachLine {
+                stringBuilder.append(it)
+            }
+//        }
     } catch (e: IOException) {
         e.printStackTrace()
     }

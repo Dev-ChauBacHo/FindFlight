@@ -13,9 +13,11 @@ data class FlightDetail(
     val oneWay: Boolean,
     val numberOfBookableSeats: String,
     val currency: Currency,
-    val airlines: MutableList<String>,
-    val segments: MutableList<Segment>,
-    val travelers: MutableList<Traveler>,
+    val airlinesCode: List<String>,
+    val duration: String,
+    val segments: List<Segment>,
+    val travelers: List<Traveler>,
+    var basicFlight: BasicFlight? = null,
 ) : Parcelable {
 
     constructor(jsonObject: JSONObject) : this(
@@ -23,8 +25,11 @@ data class FlightDetail(
         oneWay = jsonObject.getBoolean(FlightModelConst.ONEWAY),
         numberOfBookableSeats = jsonObject.getString(FlightModelConst.BOOKABLE_SEATS),
         currency = Currency(jsonObject.getJSONObject(BaseConst.PRICE)),
-        airlines = jsonObject.getString(FlightModelConst.VALIDATE_AIRLINE)
+        airlinesCode = jsonObject.getString(FlightModelConst.VALIDATE_AIRLINE)
             .parseJsonArrayToObjects(),
+        duration = jsonObject.getJSONArray(FlightModelConst.ITINERARIES)
+            .getJSONObject(FlightModelConst.INDEX_ZERO)
+            .getString(FlightModelConst.DURATION),
         segments = jsonObject.getJSONArray(FlightModelConst.ITINERARIES)
             .getJSONObject(FlightModelConst.INDEX_ZERO)
             .getString(FlightModelConst.SEGMENTS)

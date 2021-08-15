@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.offerflightslist.OfferFlightsListFragment">
+
+    <View
+        android:id="@+id/viewFlightOffer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_radius90_shadow_white"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintDimensionRatio="4.3:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.38" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSort"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:letterSpacing="0"
+        android:text="@string/text_sort"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_8"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_sort"
+        app:iconSize="@dimen/dp_16"
+        app:iconTint="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@id/viewFlightOffer"
+        app:layout_constraintEnd_toStartOf="@id/imageDividerFlight"
+        app:layout_constraintStart_toStartOf="@id/viewFlightOffer"
+        app:layout_constraintTop_toTopOf="@id/viewFlightOffer" />
+
+    <ImageView
+        android:id="@+id/imageDividerFlight"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_divider"
+        app:layout_constraintBottom_toBottomOf="@id/viewFlightOffer"
+        app:layout_constraintEnd_toEndOf="@id/viewFlightOffer"
+        app:layout_constraintStart_toStartOf="@id/viewFlightOffer"
+        app:layout_constraintTop_toTopOf="@id/viewFlightOffer" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonFilter"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:letterSpacing="0"
+        android:text="@string/text_filter"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_8"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_filter"
+        app:iconSize="@dimen/dp_16"
+        app:iconTint="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@id/viewFlightOffer"
+        app:layout_constraintEnd_toEndOf="@id/viewFlightOffer"
+        app:layout_constraintStart_toEndOf="@id/imageDividerFlight"
+        app:layout_constraintTop_toTopOf="@id/viewFlightOffer" />
+
+    <ProgressBar
+        android:id="@+id/progressBarFlightOffer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewFlightOffer" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerFlightsOffer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_6"
+        android:layout_marginBottom="@dimen/dp_10"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewFlightOffer"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_flight_detail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

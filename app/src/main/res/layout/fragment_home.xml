@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewHome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_radius20_orange_peel"
+            android:contentDescription="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textChoosePlaces"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/text_choose_place"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_28"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/viewItemPlace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/viewItemPlace"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:background="@drawable/bg_radius20_frangipani"
+            app:layout_constraintBottom_toTopOf="@id/textChooseDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textChoosePlaces" />
+
+        <TextView
+            android:id="@+id/textPlaceFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/text_from_required"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/imagePlaneTakeoff"
+            app:layout_constraintStart_toStartOf="@id/viewItemPlace"
+            app:layout_constraintTop_toTopOf="@id/viewItemPlace" />
+
+        <ImageView
+            android:id="@+id/imagePlaneTakeoff"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_plane_takeoff"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/textPlaceFrom"
+            app:layout_constraintTop_toBottomOf="@id/textPlaceFrom"
+            app:layout_constraintWidth_percent="0.08" />
+
+        <TextView
+            android:id="@+id/textSearchPlaceFrom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hint="@string/title_search"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintBottom_toBottomOf="@id/imagePlaneTakeoff"
+            app:layout_constraintEnd_toEndOf="@id/imageDividerPlaceFrom"
+            app:layout_constraintStart_toEndOf="@id/imagePlaneTakeoff"
+            app:layout_constraintTop_toTopOf="@id/imagePlaneTakeoff"
+            tools:text="@tools:sample/cities" />
+
+        <ImageView
+            android:id="@+id/imageDividerPlaceFrom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintEnd_toStartOf="@id/imageSwapPlaces"
+            app:layout_constraintStart_toStartOf="@id/imagePlaneTakeoff"
+            app:layout_constraintTop_toBottomOf="@id/imagePlaneTakeoff" />
+
+        <ImageView
+            android:id="@+id/imageSwapPlaces"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_swap_vert"
+            app:layout_constraintBottom_toBottomOf="@id/imageDividerPlaceFrom"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/viewItemPlace"
+            app:layout_constraintStart_toEndOf="@id/imageDividerPlaceFrom"
+            app:layout_constraintTop_toTopOf="@id/imageDividerPlaceFrom"
+            app:layout_constraintWidth_percent="0.07" />
+
+        <TextView
+            android:id="@+id/textPlaceTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_26"
+            android:text="@string/text_to"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/imagePlaneLand"
+            app:layout_constraintStart_toStartOf="@id/textPlaceFrom"
+            app:layout_constraintTop_toBottomOf="@id/imagePlaneTakeoff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="bottom|center"
+            android:text="@string/text_leave_empty"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="@id/textPlaceTo"
+            app:layout_constraintStart_toEndOf="@id/textPlaceTo"
+            app:layout_constraintTop_toTopOf="@id/textPlaceTo" />
+
+        <ImageView
+            android:id="@+id/imagePlaneLand"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:rotation="70"
+            android:src="@drawable/ic_plane_takeoff"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/textPlaceFrom"
+            app:layout_constraintTop_toBottomOf="@id/textPlaceTo"
+            app:layout_constraintWidth_percent="0.08" />
+
+        <TextView
+            android:id="@+id/textSearchPlaceTo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hint="@string/title_search"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintBottom_toBottomOf="@id/imagePlaneLand"
+            app:layout_constraintEnd_toStartOf="@id/imageCancelPlaceTo"
+            app:layout_constraintStart_toEndOf="@id/imagePlaneLand"
+            app:layout_constraintTop_toTopOf="@id/imagePlaneLand" />
+
+        <ImageView
+            android:id="@+id/imageCancelPlaceTo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintBottom_toBottomOf="@id/textSearchPlaceTo"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/viewItemPlace"
+            app:layout_constraintStart_toEndOf="@id/textSearchPlaceTo"
+            app:layout_constraintTop_toTopOf="@id/textSearchPlaceTo"
+            app:layout_constraintWidth_percent="0.07" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintEnd_toEndOf="@id/textSearchPlaceFrom"
+            app:layout_constraintStart_toStartOf="@id/imagePlaneLand"
+            app:layout_constraintTop_toBottomOf="@id/imagePlaneLand" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchOneway"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="@string/text_oneway"
+            android:textSize="@dimen/sp_18"
+            android:theme="@style/SwitchButton"
+            app:layout_constraintBottom_toBottomOf="@id/viewItemPlace"
+            app:layout_constraintStart_toStartOf="@id/textPlaceFrom"
+            app:layout_constraintTop_toBottomOf="@id/imagePlaneLand" />
+
+        <TextView
+            android:id="@+id/textChooseDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_30"
+            android:text="@string/text_choose_departure_date"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_28"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/viewItemDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewItemPlace" />
+
+        <View
+            android:id="@+id/viewItemDate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:background="@drawable/bg_radius20_frangipani"
+            app:layout_constraintBottom_toTopOf="@id/textOtherInfo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textChooseDate" />
+
+        <TextView
+            android:id="@+id/textDateFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/text_from"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/imageCalendarFrom"
+            app:layout_constraintStart_toStartOf="@id/viewItemDate"
+            app:layout_constraintTop_toTopOf="@id/viewItemDate" />
+
+        <ImageView
+            android:id="@+id/imageCalendarFrom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/textDateFrom"
+            app:layout_constraintTop_toBottomOf="@id/textDateFrom"
+            app:layout_constraintWidth_percent="0.08" />
+
+        <TextView
+            android:id="@+id/textSearchDateFrom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hint="@string/title_choose_date"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintBottom_toBottomOf="@id/imageCalendarFrom"
+            app:layout_constraintEnd_toStartOf="@id/imageCancelDateFrom"
+            app:layout_constraintStart_toEndOf="@id/imageCalendarFrom"
+            app:layout_constraintTop_toTopOf="@id/imageCalendarFrom"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <ImageView
+            android:id="@+id/imageCancelDateFrom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintBottom_toBottomOf="@id/textSearchDateFrom"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/viewItemDate"
+            app:layout_constraintStart_toEndOf="@id/textSearchDateFrom"
+            app:layout_constraintTop_toTopOf="@id/textSearchDateFrom"
+            app:layout_constraintWidth_percent="0.07" />
+
+        <ImageView
+            android:id="@+id/imageDividerDateFrom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintEnd_toEndOf="@id/textSearchDateFrom"
+            app:layout_constraintStart_toStartOf="@id/imageCalendarFrom"
+            app:layout_constraintTop_toBottomOf="@id/imageCalendarFrom" />
+
+        <TextView
+            android:id="@+id/textDateTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_26"
+            android:text="@string/text_to"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/imageCalendarTo"
+            app:layout_constraintStart_toStartOf="@id/textDateFrom"
+            app:layout_constraintTop_toBottomOf="@id/imageCalendarFrom" />
+
+        <ImageView
+            android:id="@+id/imageCalendarTo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/textDateFrom"
+            app:layout_constraintTop_toBottomOf="@id/textDateTo"
+            app:layout_constraintWidth_percent="0.08" />
+
+        <TextView
+            android:id="@+id/textSearchDateTo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hint="@string/title_choose_date"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintBottom_toBottomOf="@id/imageCalendarTo"
+            app:layout_constraintEnd_toStartOf="@id/imageCancelDateTo"
+            app:layout_constraintStart_toEndOf="@id/imageCalendarTo"
+            app:layout_constraintTop_toTopOf="@id/imageCalendarTo" />
+
+        <ImageView
+            android:id="@+id/imageCancelDateTo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintBottom_toBottomOf="@id/textSearchDateTo"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/viewItemDate"
+            app:layout_constraintStart_toEndOf="@id/textSearchDateTo"
+            app:layout_constraintTop_toTopOf="@id/textSearchDateTo"
+            app:layout_constraintWidth_percent="0.07" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintEnd_toEndOf="@id/textSearchDateFrom"
+            app:layout_constraintStart_toStartOf="@id/imageCalendarTo"
+            app:layout_constraintTop_toBottomOf="@id/imageCalendarTo" />
+
+        <TextView
+            android:id="@+id/textOtherInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_30"
+            android:text="@string/text_other_info"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_28"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewItemDate" />
+
+        <View
+            android:id="@+id/viewItemInfo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@drawable/bg_radius20_frangipani"
+            app:layout_constraintBottom_toTopOf="@id/buttonFindFlight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textOtherInfo" />
+
+        <TextView
+            android:id="@+id/textReturnDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/text_return_date"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/imageReturnDate"
+            app:layout_constraintStart_toStartOf="@id/viewItemInfo"
+            app:layout_constraintTop_toTopOf="@id/viewItemInfo" />
+
+        <ImageView
+            android:id="@+id/imageReturnDate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/textReturnDate"
+            app:layout_constraintTop_toBottomOf="@id/textReturnDate"
+            app:layout_constraintWidth_percent="0.08" />
+
+        <TextView
+            android:id="@+id/textSearchReturnDate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hint="@string/title_choose_date"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintBottom_toBottomOf="@id/imageReturnDate"
+            app:layout_constraintEnd_toStartOf="@id/imageCancelDateFrom"
+            app:layout_constraintStart_toEndOf="@id/imageCalendarFrom"
+            app:layout_constraintTop_toTopOf="@id/imageReturnDate"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <ImageView
+            android:id="@+id/imageCancelReturnDate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintBottom_toBottomOf="@id/textSearchReturnDate"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/viewItemInfo"
+            app:layout_constraintStart_toEndOf="@id/textSearchReturnDate"
+            app:layout_constraintTop_toTopOf="@id/textSearchReturnDate"
+            app:layout_constraintWidth_percent="0.07" />
+
+        <ImageView
+            android:id="@+id/imageDividerReturnDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintEnd_toEndOf="@id/textSearchReturnDate"
+            app:layout_constraintStart_toStartOf="@id/imageReturnDate"
+            app:layout_constraintTop_toBottomOf="@id/imageReturnDate" />
+
+        <TextView
+            android:id="@+id/textPassenger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_26"
+            android:text="@string/text_passengers"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/imagePassenger"
+            app:layout_constraintStart_toStartOf="@id/textReturnDate"
+            app:layout_constraintTop_toBottomOf="@id/imageReturnDate" />
+
+        <ImageView
+            android:id="@+id/imagePassenger"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_passenger"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/textReturnDate"
+            app:layout_constraintTop_toBottomOf="@id/textPassenger"
+            app:layout_constraintWidth_percent="0.08" />
+
+        <TextView
+            android:id="@+id/textChangePassenger"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="@string/title_default_passenger"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintBottom_toBottomOf="@id/imagePassenger"
+            app:layout_constraintEnd_toEndOf="@id/viewItemInfo"
+            app:layout_constraintStart_toEndOf="@id/imagePassenger"
+            app:layout_constraintTop_toTopOf="@id/imagePassenger" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintEnd_toEndOf="@id/textChangePassenger"
+            app:layout_constraintStart_toStartOf="@id/imagePassenger"
+            app:layout_constraintTop_toBottomOf="@id/imagePassenger" />
+
+        <TextView
+            android:id="@+id/textTravelClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/text_travel_class"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/imageTravelClass"
+            app:layout_constraintStart_toStartOf="@id/viewItemInfo"
+            app:layout_constraintTop_toBottomOf="@id/imagePassenger" />
+
+        <ImageView
+            android:id="@+id/imageTravelClass"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_travel_class"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/textReturnDate"
+            app:layout_constraintTop_toBottomOf="@id/textTravelClass"
+            app:layout_constraintWidth_percent="0.08" />
+
+        <Spinner
+            android:id="@+id/spinnerTravelClass"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:spinnerMode="dropdown"
+            android:stateListAnimator="@animator/spinner_selected"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintBottom_toBottomOf="@id/imageTravelClass"
+            app:layout_constraintEnd_toStartOf="@id/imageDropdownTravelClass"
+            app:layout_constraintStart_toEndOf="@id/imageTravelClass"
+            app:layout_constraintTop_toTopOf="@id/imageTravelClass" />
+
+        <ImageView
+            android:id="@+id/imageDropdownTravelClass"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_arrow_drop_down"
+            app:layout_constraintBottom_toBottomOf="@id/spinnerTravelClass"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/viewItemInfo"
+            app:layout_constraintStart_toEndOf="@id/spinnerTravelClass"
+            app:layout_constraintTop_toTopOf="@id/spinnerTravelClass"
+            app:layout_constraintWidth_percent="0.07" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintEnd_toEndOf="@id/spinnerTravelClass"
+            app:layout_constraintStart_toStartOf="@id/imageTravelClass"
+            app:layout_constraintTop_toBottomOf="@id/imageTravelClass" />
+
+        <TextView
+            android:id="@+id/textCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/text_currency"
+            android:textColor="@color/color_pickled_bluewood"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/imageCurrency"
+            app:layout_constraintStart_toStartOf="@id/viewItemInfo"
+            app:layout_constraintTop_toBottomOf="@id/imageTravelClass" />
+
+        <ImageView
+            android:id="@+id/imageCurrency"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_currency"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/textReturnDate"
+            app:layout_constraintTop_toBottomOf="@id/textCurrency"
+            app:layout_constraintWidth_percent="0.08" />
+
+        <Spinner
+            android:id="@+id/spinnerCurrency"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:spinnerMode="dropdown"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintBottom_toBottomOf="@id/imageCurrency"
+            app:layout_constraintEnd_toStartOf="@id/imageDropdownCurrency"
+            app:layout_constraintStart_toEndOf="@id/imageCurrency"
+            app:layout_constraintTop_toTopOf="@id/imageCurrency" />
+
+        <ImageView
+            android:id="@+id/imageDropdownCurrency"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_arrow_drop_down"
+            app:layout_constraintBottom_toBottomOf="@id/spinnerCurrency"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/viewItemInfo"
+            app:layout_constraintStart_toEndOf="@id/spinnerCurrency"
+            app:layout_constraintTop_toTopOf="@id/spinnerCurrency"
+            app:layout_constraintWidth_percent="0.07" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_divider"
+            app:layout_constraintEnd_toEndOf="@id/spinnerCurrency"
+            app:layout_constraintStart_toStartOf="@id/imageCurrency"
+            app:layout_constraintTop_toBottomOf="@id/imageCurrency" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonFindFlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_100"
+            android:backgroundTint="@color/color_sunset_orange"
+            android:padding="@dimen/dp_10"
+            android:text="@string/app_name"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/dp_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewItemInfo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

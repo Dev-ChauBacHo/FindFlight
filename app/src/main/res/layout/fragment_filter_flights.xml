@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textMaxPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/text_max_price"
+        android:textColor="@color/color_pickled_bluewood"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textNumStop"
+        app:layout_constraintEnd_toStartOf="@id/editTextMaxPrice"
+        app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextMaxPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:autofillHints="@null"
+        android:hint="@string/text_hint_your_max_price"
+        android:inputType="number"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:textColor="@color/color_pickled_bluewood"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textMaxPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@id/textMaxPrice"
+        app:layout_constraintTop_toTopOf="@id/textMaxPrice" />
+
+    <TextView
+        android:id="@+id/textNumStop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/text_number_of_stops"
+        android:textColor="@color/color_pickled_bluewood"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/textMaxPrice"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/textMaxPrice"
+        app:layout_constraintTop_toBottomOf="@id/textMaxPrice" />
+
+    <EditText
+        android:id="@+id/editTextNumStop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="@null"
+        android:hint="@string/text_hint_number_of_stops"
+        android:inputType="number"
+        android:maxLength="2"
+        android:maxLines="1"
+        android:textColor="@color/color_pickled_bluewood"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textNumStop"
+        app:layout_constraintEnd_toEndOf="@id/editTextMaxPrice"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toStartOf="@id/editTextMaxPrice"
+        app:layout_constraintTop_toTopOf="@id/textNumStop" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonFilterApply"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_sunset_orange"
+        android:text="@string/text_apply"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="@id/buttonFilterClear"
+        app:layout_constraintEnd_toStartOf="@id/buttonFilterCancel"
+        app:layout_constraintStart_toEndOf="@id/buttonFilterClear"
+        app:layout_constraintTop_toTopOf="@id/buttonFilterClear"
+        app:layout_constraintWidth_percent="0.24" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonFilterClear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:backgroundTint="@android:color/darker_gray"
+        android:text="@string/text_clear"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/buttonFilterApply"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textNumStop"
+        app:layout_constraintWidth_percent="0.24" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonFilterCancel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_vivid_tangerine"
+        android:maxLines="1"
+        android:text="@string/text_cancel"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="@id/buttonFilterClear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonFilterApply"
+        app:layout_constraintTop_toTopOf="@id/buttonFilterClear"
+        app:layout_constraintWidth_percent="0.24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

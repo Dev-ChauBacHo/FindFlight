@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textTitlePassenger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:gravity="center"
+        android:text="@string/text_add_passenger"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_28"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageDividerAdult"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_2"
+        android:layout_marginTop="@dimen/dp_2"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_divider"
+        app:layout_constraintBottom_toTopOf="@id/textPassengerAdult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTitlePassenger" />
+
+    <TextView
+        android:id="@+id/textPassengerAdult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:text="@string/text_adult"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textAgeRangeAdult"
+        app:layout_constraintStart_toStartOf="@id/imageDividerAdult"
+        app:layout_constraintTop_toTopOf="@id/imageAddAdult" />
+
+    <TextView
+        android:id="@+id/textAgeRangeAdult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_age_adult"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@id/imageAddAdult"
+        app:layout_constraintStart_toStartOf="@id/textPassengerAdult"
+        app:layout_constraintTop_toBottomOf="@id/textPassengerAdult" />
+
+    <ImageView
+        android:id="@+id/imageMinusAdult"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_minus_on"
+        app:layout_constraintBottom_toBottomOf="@id/imageAddAdult"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/textPassengerNumberAdult"
+        app:layout_constraintTop_toTopOf="@id/imageAddAdult"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <TextView
+        android:id="@+id/textPassengerNumberAdult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:text="@string/text_adult_default"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imageAddAdult"
+        app:layout_constraintEnd_toStartOf="@id/imageAddAdult"
+        app:layout_constraintTop_toTopOf="@id/imageAddAdult" />
+
+    <ImageView
+        android:id="@+id/imageAddAdult"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_add_on"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageDividerAdult"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <ImageView
+        android:id="@+id/imageDividerChild"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_2"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_divider"
+        app:layout_constraintBottom_toTopOf="@id/textPassengerChild"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageAddAdult" />
+
+    <TextView
+        android:id="@+id/textPassengerChild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:text="@string/text_child"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textAgeRangeChild"
+        app:layout_constraintStart_toStartOf="@id/imageDividerChild"
+        app:layout_constraintTop_toBottomOf="@id/imageDividerChild" />
+
+    <TextView
+        android:id="@+id/textAgeRangeChild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_age_child"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@id/imageAddChild"
+        app:layout_constraintStart_toStartOf="@id/textPassengerChild"
+        app:layout_constraintTop_toBottomOf="@id/textPassengerChild" />
+
+    <ImageView
+        android:id="@+id/imageMinusChild"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_minus_on"
+        app:layout_constraintBottom_toBottomOf="@id/imageAddChild"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/textPassengerNumberChild"
+        app:layout_constraintTop_toTopOf="@id/imageAddChild"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <TextView
+        android:id="@+id/textPassengerNumberChild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:text="@string/text_passenger_default"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imageAddChild"
+        app:layout_constraintEnd_toStartOf="@id/imageAddChild"
+        app:layout_constraintTop_toTopOf="@id/imageAddChild" />
+
+    <ImageView
+        android:id="@+id/imageAddChild"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_add_on"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageDividerChild"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <ImageView
+        android:id="@+id/imageDividerInfant"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_2"
+        android:layout_marginTop="@dimen/dp_2"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_divider"
+        app:layout_constraintBottom_toTopOf="@id/textPassengerInfant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageAddChild" />
+
+    <TextView
+        android:id="@+id/textPassengerInfant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:text="@string/text_infant"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textAgeRangeInfant"
+        app:layout_constraintStart_toStartOf="@id/imageDividerInfant"
+        app:layout_constraintTop_toBottomOf="@id/imageDividerInfant" />
+
+    <TextView
+        android:id="@+id/textAgeRangeInfant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:text="@string/text_age_infant"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@id/imageAddInfant"
+        app:layout_constraintStart_toStartOf="@id/textPassengerInfant"
+        app:layout_constraintTop_toBottomOf="@id/textPassengerInfant" />
+
+    <ImageView
+        android:id="@+id/imageMinusInfant"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_minus_on"
+        app:layout_constraintBottom_toBottomOf="@id/imageAddInfant"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/textPassengerNumberInfant"
+        app:layout_constraintTop_toTopOf="@id/imageAddInfant"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <TextView
+        android:id="@+id/textPassengerNumberInfant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:text="@string/text_passenger_default"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imageAddInfant"
+        app:layout_constraintEnd_toStartOf="@id/imageAddInfant"
+        app:layout_constraintTop_toTopOf="@id/imageAddInfant" />
+
+    <ImageView
+        android:id="@+id/imageAddInfant"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_add_on"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageDividerInfant"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonApplyPassenger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:backgroundTint="@color/color_sunset_orange"
+        android:paddingHorizontal="@dimen/dp_26"
+        android:text="@string/text_apply"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageAddInfant" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,8 +28,8 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(), SplashContract.Vie
         finish()
     }
 
-    override fun showMessage(data: Any) {
-        showToast(data.toString())
+    override fun showMessage(messageRes: Int) {
+        showToast(resources.getString(messageRes))
         notifyTokenUpdated()
     }
 

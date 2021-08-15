@@ -12,7 +12,7 @@ data class Traveler(
     val fareOption: String,
     val travelerType: String,
     val price: String,
-    val segmentFareDetail: MutableList<SegmentFareDetail>,
+    val segmentFareDetail: List<SegmentFareDetail>,
 ) : Parcelable {
 
     constructor(jsonObject: JSONObject) : this(

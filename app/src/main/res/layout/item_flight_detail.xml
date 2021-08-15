@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <View
+        android:id="@+id/viewItemFlightOffer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_radius15_shadow_gold_drop"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintDimensionRatio="1.9:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <ImageView
+        android:id="@+id/imageFlightOrigin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_flag_holder"
+        app:layout_constraintBottom_toBottomOf="@id/viewItemFlightOffer"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/viewItemFlightOffer"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="@id/viewItemFlightOffer"
+        app:layout_constraintTop_toTopOf="@id/viewItemFlightOffer"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintWidth_percent="0.1"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textFlightOrigin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/imageFlightOrigin"
+        app:layout_constraintStart_toStartOf="@id/imageFlightOrigin"
+        app:layout_constraintTop_toBottomOf="@id/imageFlightOrigin"
+        tools:text="@tools:sample/cities" />
+
+    <ImageView
+        android:id="@+id/imageFlightUnchecked"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_unchecked"
+        app:layout_constraintBottom_toBottomOf="@id/imageDividerFlightDetail"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/imageDividerFlightDetail"
+        app:layout_constraintTop_toTopOf="@id/imageDividerFlightDetail"
+        app:layout_constraintWidth_percent="0.02"
+        app:tint="@color/color_gold_drop" />
+
+    <ImageView
+        android:id="@+id/imageDividerFlightDetail"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_2"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_divider"
+        app:layout_constraintBottom_toBottomOf="@id/imageFlightOrigin"
+        app:layout_constraintEnd_toStartOf="@id/imageFlightDes"
+        app:layout_constraintStart_toEndOf="@id/imageFlightOrigin"
+        app:layout_constraintTop_toTopOf="@id/imageFlightOrigin"
+        app:layout_constraintWidth_percent="0.3"
+        app:tint="@color/color_gold_drop" />
+
+    <ImageView
+        android:id="@+id/imageFlightChecked"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_checked_circle"
+        app:layout_constraintBottom_toBottomOf="@id/imageDividerFlightDetail"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/imageDividerFlightDetail"
+        app:layout_constraintTop_toTopOf="@id/imageDividerFlightDetail"
+        app:layout_constraintWidth_percent="0.02"
+        app:tint="@color/color_gold_drop" />
+
+    <ImageView
+        android:id="@+id/imageFlightDes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_flag_holder"
+        app:layout_constraintBottom_toBottomOf="@id/imageFlightOrigin"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/viewItemFlightOffer"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="@id/viewItemFlightOffer"
+        app:layout_constraintTop_toTopOf="@id/imageFlightOrigin"
+        app:layout_constraintWidth_percent="0.1"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textFlightDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/imageFlightDes"
+        app:layout_constraintStart_toStartOf="@id/imageFlightDes"
+        app:layout_constraintTop_toBottomOf="@id/imageFlightDes"
+        tools:text="@tools:sample/cities" />
+
+    <TextView
+        android:id="@+id/textFlightDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toTopOf="@id/imageDividerFlightDetail"
+        app:layout_constraintEnd_toEndOf="@id/imageDividerFlightDetail"
+        app:layout_constraintStart_toStartOf="@id/imageDividerFlightDetail"
+        tools:text="1h 25p" />
+
+    <TextView
+        android:id="@+id/textFlightStopNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@id/imageDividerFlightDetail"
+        app:layout_constraintStart_toStartOf="@id/imageDividerFlightDetail"
+        app:layout_constraintTop_toBottomOf="@id/imageDividerFlightDetail"
+        tools:text="Direct" />
+
+    <TextView
+        android:id="@+id/textDepartureDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/text_departure_date"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@id/textPrice"
+        app:layout_constraintEnd_toStartOf="@id/textShowDepartureDate"
+        app:layout_constraintStart_toStartOf="@id/imageFlightOrigin"
+        app:layout_constraintTop_toBottomOf="@id/textFlightOrigin" />
+
+    <TextView
+        android:id="@+id/textShowDepartureDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_2"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textDepartureDate"
+        app:layout_constraintEnd_toEndOf="@id/imageFlightDes"
+        app:layout_constraintStart_toEndOf="@id/textDepartureDate"
+        app:layout_constraintTop_toTopOf="@id/textDepartureDate"
+        tools:text="@tools:sample/date/ddmmyy" />
+
+    <TextView
+        android:id="@+id/textPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/text_price"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@id/textCarrier"
+        app:layout_constraintEnd_toEndOf="@id/textDepartureDate"
+        app:layout_constraintStart_toStartOf="@id/textDepartureDate"
+        app:layout_constraintTop_toBottomOf="@id/textDepartureDate" />
+
+    <TextView
+        android:id="@+id/textShowPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textPrice"
+        app:layout_constraintEnd_toEndOf="@id/textShowDepartureDate"
+        app:layout_constraintStart_toStartOf="@id/textShowDepartureDate"
+        app:layout_constraintTop_toTopOf="@id/textPrice"
+        tools:text="45.000.000" />
+
+    <TextView
+        android:id="@+id/textCarrier"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/text_carrier"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@id/textSeatNum"
+        app:layout_constraintEnd_toEndOf="@id/textDepartureDate"
+        app:layout_constraintStart_toStartOf="@id/textDepartureDate"
+        app:layout_constraintTop_toBottomOf="@id/textPrice" />
+
+    <TextView
+        android:id="@+id/textShowCarrier"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/textShowDepartureDate"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/textShowDepartureDate"
+        app:layout_constraintTop_toTopOf="@id/textCarrier"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="Vietnam Airlines" />
+
+    <TextView
+        android:id="@+id/textSeatNum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/text_available_seats"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@id/viewItemFlightOffer"
+        app:layout_constraintEnd_toEndOf="@id/textDepartureDate"
+        app:layout_constraintStart_toStartOf="@id/textDepartureDate"
+        app:layout_constraintTop_toBottomOf="@id/textCarrier" />
+
+    <TextView
+        android:id="@+id/textShowSeatNum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/textSeatNum"
+        app:layout_constraintEnd_toEndOf="@id/textShowDepartureDate"
+        app:layout_constraintStart_toStartOf="@id/textShowDepartureDate"
+        app:layout_constraintTop_toTopOf="@id/textSeatNum"
+        tools:text="9" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

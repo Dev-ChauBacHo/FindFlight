@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/viewItemFare"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_radius5_shadow_white"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintDimensionRatio="4.8:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.95" />
+
+    <ImageView
+        android:id="@+id/imageDiamond"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_6"
+        android:layout_marginTop="@dimen/dp_10"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_diamond"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/textCabin"
+        app:layout_constraintStart_toStartOf="@id/viewItemFare"
+        app:layout_constraintTop_toTopOf="@id/viewItemFare"
+        app:layout_constraintWidth_percent="0.06" />
+
+    <TextView
+        android:id="@+id/textCabin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_sunset_orange"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/viewItemFare"
+        app:layout_constraintStart_toEndOf="@id/imageDiamond"
+        app:layout_constraintTop_toTopOf="@id/imageDiamond"
+        tools:text="@tools:sample/lorem" />
+
+    <ImageView
+        android:id="@+id/imageClass"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_6"
+        android:layout_marginVertical="@dimen/dp_10"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_doc"
+        app:layout_constraintBottom_toBottomOf="@id/viewItemFare"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/textCabin"
+        app:layout_constraintStart_toStartOf="@id/viewItemFare"
+        app:layout_constraintTop_toBottomOf="@id/imageDiamond"
+        app:layout_constraintWidth_percent="0.06" />
+
+    <TextView
+        android:id="@+id/textClass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:textColor="@color/color_sunset_orange"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/viewItemFare"
+        app:layout_constraintEnd_toStartOf="@id/guidelineFare"
+        app:layout_constraintStart_toStartOf="@id/textCabin"
+        app:layout_constraintTop_toTopOf="@id/imageClass"
+        tools:text="@tools:sample/lorem" />
+
+    <ImageView
+        android:id="@+id/imageBaggage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_6"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_baggage"
+        app:layout_constraintBottom_toBottomOf="@id/viewItemFare"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/textBaggage"
+        app:layout_constraintStart_toEndOf="@id/guidelineFare"
+        app:layout_constraintTop_toTopOf="@id/textClass"
+        app:layout_constraintWidth_percent="0.06" />
+
+    <TextView
+        android:id="@+id/textBaggage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:textColor="@color/color_sunset_orange"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/viewItemFare"
+        app:layout_constraintEnd_toEndOf="@id/viewItemFare"
+        app:layout_constraintStart_toEndOf="@id/imageBaggage"
+        app:layout_constraintTop_toTopOf="@id/imageClass"
+        tools:text="@tools:sample/lorem" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineFare"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
