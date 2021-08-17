@@ -1,6 +1,5 @@
 package com.sun.findflight.utils
 
-import android.util.Log
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -10,6 +9,8 @@ object TimeUtils {
     private const val EMPTY_STRING = ""
     private const val TIME_DATE_FORMAT = "yyyy-MM-dd"
     private const val TIME_DATE_HOUR_FORMAT = "yyyy-MM-dd HH:mm"
+    private const val MONTH_FORMAT = "M"
+    private const val YEAR_FORMAT = "yyyy"
     private const val SECOND = 1000
     private const val HOUR = 60
     private const val DAY = 24
@@ -70,5 +71,17 @@ object TimeUtils {
         val hour = unit.first().toIntOrNull()
         val minute = unit.last().toIntOrNull()
         return if (hour != null && minute != null) hour * HOUR + minute else 0
+    }
+
+    fun getCurrentMonth(): Int? {
+        val simpleDateFormat = SimpleDateFormat(MONTH_FORMAT, Locale.ENGLISH)
+        val date = Date()
+        return simpleDateFormat.format(date).toIntOrNull()
+    }
+
+    fun getCurrentYear(): Int? {
+        val simpleDateFormat = SimpleDateFormat(YEAR_FORMAT, Locale.ENGLISH)
+        val date = Date()
+        return simpleDateFormat.format(date).toIntOrNull()
     }
 }

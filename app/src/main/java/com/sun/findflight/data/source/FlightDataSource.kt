@@ -16,6 +16,6 @@ interface FlightDataSource {
 
     interface Remote {
         fun getFlights(basicFlight: BasicFlight, callBack: OnDataCallBack<List<Flight>>)
-        fun getFlightsName(basicFlight: BasicFlight, callBack: OnDataCallBack<String>)
+//        fun getFlightsName(basicFlight: BasicFlight, callBack: OnDataCallBack<String>)
     }
 }

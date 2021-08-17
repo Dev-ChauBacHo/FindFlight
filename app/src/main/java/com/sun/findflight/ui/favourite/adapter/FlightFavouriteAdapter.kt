@@ -43,6 +43,7 @@ class FlightFavouriteAdapter(
         override fun bindData(itemData: Flight) {
             super.bindData(itemData)
             val color = ColorUtil.getRandomColor()
+            itemView.foreground = null
             with(viewBinding) {
                 itemData.run {
                     textOriginPlaceCode.text = originCode
@@ -71,6 +72,5 @@ class FlightFavouriteAdapter(
 
     companion object {
         const val POSITION_INVALID = -1
-        private const val TAG = "BasicFlightListAdapter"
     }
 }

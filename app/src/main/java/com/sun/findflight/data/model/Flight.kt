@@ -13,9 +13,8 @@ data class Flight(
     var id: String = "1",
     val originCode: String,
     val destinationCode: String,
-    var originName: String?,
-    var destinationName: String?,
-    //TODO change in main project
+    var originName: String? = null,
+    var destinationName: String? = null,
     val departureDate: String,
     val returnDate: String,
     val flightLink: String,
@@ -25,8 +24,6 @@ data class Flight(
     constructor(jsonObject: JSONObject) : this(
         originCode = jsonObject.getString(BaseConst.ORIGIN),
         destinationCode = jsonObject.getString(BaseConst.DESTINATION),
-        originName = null,
-        destinationName = null,
         departureDate = jsonObject.getString(BaseConst.DEPARTURE_DATE),
         returnDate = jsonObject.getString(BaseConst.RETURN_DATE),
         flightLink = jsonObject.getJSONObject(BaseConst.LINK).getString(BaseConst.FLIGHT_OFFERS),

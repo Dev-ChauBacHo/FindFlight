@@ -17,10 +17,6 @@ class FlightRepository private constructor(
         remote.getFlights(basicFlight, callBack)
     }
 
-    override fun getFlightsName(basicFlight: BasicFlight, callBack: OnDataCallBack<String>) {
-        remote.getFlightsName(basicFlight, callBack)
-    }
-
     override fun getLocalFlights(callBack: OnDataCallBack<List<Flight>>) {
         local.getLocalFlights(callBack)
     }

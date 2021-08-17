@@ -59,11 +59,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), View.OnClickListener, 
     override fun initData() {
         val currency = resources.getStringArray(R.array.currency_list)
         viewBinding.spinnerCurrency.adapter =
-            context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_item, currency) }
+            context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_dropdown_item, currency) }
 
         val travelClass = resources.getStringArray(R.array.travel_class)
         viewBinding.spinnerTravelClass.adapter =
-            context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_item, travelClass) }
+            context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_dropdown_item, travelClass) }
 
         context?.let {
             val repository = RepositoryUtils.getBasicFlightRepository(it)

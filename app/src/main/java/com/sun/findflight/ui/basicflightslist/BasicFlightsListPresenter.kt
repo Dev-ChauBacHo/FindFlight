@@ -20,38 +20,11 @@ class BasicFlightsListPresenter(
                 if (data.isEmpty()) {
                     dataUnavailable()
                 } else {
-                    getLocation(data, basicFlight)
+                    getLocalBasicFlight(data)
                 }
             }
 
             override fun onFailure(e: Exception?) = dataUnavailable()
-        })
-    }
-
-    fun getLocation(dataFlight: List<Flight>, basicFlight: BasicFlight) {
-        repository.getFlightsName(basicFlight, object : OnDataCallBack<String> {
-            override fun onSuccess(data: String) {
-                if (data.isNotEmpty()) {
-                    val jsonObject = JSONObject(data)
-                    dataFlight.forEach {
-                        it.originName = try {
-                            jsonObject.getJSONObject(it.originCode)
-                                .getString(BaseConst.DETAILED_NAME)
-                        } catch (e: JSONException) {
-                            it.originCode
-                        }
-                        it.destinationName = try {
-                            jsonObject.getJSONObject(it.destinationCode)
-                                .getString(BaseConst.DETAILED_NAME)
-                        } catch (e: JSONException) {
-                            it.destinationCode
-                        }
-                    }
-                }
-                getLocalBasicFlight(dataFlight)
-            }
-
-            override fun onFailure(e: Exception?) = dataAvailable(dataFlight)
         })
     }
 
@@ -92,7 +65,6 @@ class BasicFlightsListPresenter(
                         view.showMessage(R.string.text_deleted_from_favourite)
                     } else {
                         view.showMessage(R.string.error_common)
-                        println(flight)
                     }
                 }
 

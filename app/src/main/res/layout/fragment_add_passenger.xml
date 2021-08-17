@@ -4,16 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_4"
+        android:background="@drawable/bg_radius20_frangipani"
+        app:layout_constraintDimensionRatio="7:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.15" />
+
     <TextView
         android:id="@+id/textTitlePassenger"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_6"
+        android:layout_marginTop="@dimen/dp_16"
         android:gravity="center"
         android:text="@string/text_add_passenger"
         android:textColor="@android:color/black"
-        android:textSize="@dimen/sp_28"
+        android:textSize="@dimen/sp_20"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/imageDividerAdult"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -12,7 +12,7 @@
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/dp_10"
         android:layout_marginTop="@dimen/dp_10"
-        android:background="@drawable/bg_radius20_frangipani"
+        android:background="@drawable/bg_radius5_shadow_white"
         android:padding="@dimen/dp_10"
         app:layout_constraintDimensionRatio="2.3:1"
         app:layout_constraintEnd_toEndOf="parent"

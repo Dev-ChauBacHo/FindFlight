@@ -54,9 +54,18 @@ class AddPassengerFragment : BaseSheetDialogFragment<FragmentAddPassengerBinding
         val child = bundle?.getString(KEY_CHILD)
         val infant = bundle?.getString(KEY_INFANT)
         with(viewBinding) {
-            adult?.let { textPassengerNumberAdult.text = adult }
-            child?.let { textPassengerNumberChild.text = child }
-            infant?.let { textPassengerNumberInfant.text = infant }
+            adult?.let {
+                textPassengerNumberAdult.text = adult
+                total = it.toInt()
+            }
+            child?.let {
+                textPassengerNumberChild.text = child
+                total += it.toInt()
+            }
+            infant?.let {
+                textPassengerNumberInfant.text = infant
+                total += it.toInt()
+            }
         }
     }
 
